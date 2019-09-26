@@ -1,0 +1,40 @@
+.add-saldo{
+    .plataformas-pagamento{
+        .info{
+            .fake-radio{
+                width: 30px;
+                margin: 0 10px
+            }
+            .img{
+                padding: 0.54rem;
+                border: 1px solid #ccc;
+                width: 120px
+            }
+            .lbl{
+                font-size: .85rem;
+                color: #ccc;
+                margin-left: 15px
+            }
+        }
+    }
+    .servicos-suporte{
+        margin: 15px 0;
+        .lista-servicos{   
+            li{
+                &:nth-child(1){
+                    @extend %bold;
+                    color:#ccc;            
+                }                      
+            }
+            .item-list{
+                padding: 8px 0;
+                text-indent: 44px;
+                margin: 8px 0;
+                list-style: none;
+                background: url('https://img.icons8.com/material-outlined/24/48cff0/ok.png') no-repeat 10px center;
+                font-size: .8rem;
+                color:#999  
+            }
+        }
+    }
+}

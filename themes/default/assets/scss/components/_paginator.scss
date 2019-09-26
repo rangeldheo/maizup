@@ -1,0 +1,28 @@
+.paginator{
+    @extend %centralizar;
+    padding:15px 0;
+    li{  
+        margin: 5px;
+        a,span{
+            @extend %transition;
+            @include hoverAir;
+            @include border-radius(4px);               
+            padding: 5px 10px;           
+            background-color: $primary;   
+            color:#fff;            
+        }
+        a{
+            @extend %transition;
+            &:hover{
+                @include shadowGenerator($top:0,$left:0,$blur:4px,$spread:2px,$color:rgba(0,0,0,0.15));
+                color:#10508b;
+                background-color:#66e2f5;
+                transform: scale(1.5)
+            }
+        }
+        .active{
+            @include shadow(1);
+            background-color:#10508b
+        }
+    }
+}

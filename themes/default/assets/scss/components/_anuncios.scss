@@ -1,0 +1,185 @@
+.anuncios-by-cat{
+    .anuncio{
+        @include shadowGenerator($top:0,$left:0,$blur:3px,$spread:1px,$color:rgba(0,0,0,0.05));        
+        &:hover{
+            @include shadowGenerator($top:0,$left:1px,$blur:6px,$spread:3px,$color:rgba(0,0,0,0.09));
+            transform: scale(1.01)
+        }
+        @extend %relative;
+        @extend %block;
+        @extend %w-100;
+        @extend %bg-white;
+        @extend %transition;
+        @include for-size(notebook-md){
+            @include flexbox;
+            @include align-items;
+            @include justify-content(space-between);   
+        }     
+        min-height: 100px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid $gray-300;   
+        font-size: $font-09; 
+        color: $gray-600;
+        .product-cover,.product-info,.product-data,.product-price{
+            @include for-size(phone){
+                margin: 10px auto;
+                padding: 10px;
+            }
+            @include for-size(notebook-md){
+                padding: 0;
+                margin:0;
+                width: 20%;
+            }
+        }
+        .user-data{
+            @include userStyle;  
+            @include for-size(tablet){
+                width: 25%;
+            }
+            .head{
+                @extend %relative;
+                .verified{
+                    @extend %absolute;
+                    left:30px;
+                    bottom:0;
+                }
+            }
+        }
+        .product-cover,.product-info{
+            @include for-size(notebook-md){
+                padding-left:10px;
+            }
+            img{
+                max-width: 100%;               
+            }
+        }
+        .product-data{
+            @include for-size(tablet){
+                padding: 0 20px
+            }
+        }
+        .product-data,.product-info{
+            @extend %flexbox;
+            @include flex-wrap(wrap);
+            @include justify-content(space-between);
+            label,span{
+                @extend %black;                
+                @extend %w-100;
+                font-size: $font-09;
+            }
+            ul{                
+                @extend %w-100;
+                li{    
+                    @extend %centralizar-equal;
+                    margin: 15px 0;
+                    font-size: 0.9em;                    
+                    span{
+                        color:#b7b7b7;
+                        &:nth-child(2){
+                            width: calc(100% - 27px)
+                        }
+                        &:nth-child(3){
+                            margin-left: 27px;
+                        }
+                    }
+                    .icon{
+                        @extend %relative;
+                        width: 24px;
+                        height: 24px; 
+                        .tooltip{
+                            top:-250%;
+                            left:0;
+                        }
+                    }
+                }
+            }
+        }
+        .product-cover,.product-info{         
+            @include for-size(notebook-md){
+                border-left: 2px solid $gray-300;
+            }
+        }
+        .product-price{
+            @extend %centralizar;  
+            div{
+                .valor{
+                    @extend %black;          
+                    @extend %block;
+                    @extend %w-100;                    
+                    @include for-size(phone){
+                        font-size: 1.5rem;
+                    }
+                    @include for-size(crt){
+                        font-size: 3.5rem;
+                    }
+                    color: $black
+                }
+                .parcelamento{
+                    @extend %block;
+                    color: $gray-600;
+                    margin-bottom: 15px;
+                }
+            }
+        }        
+        .add-lista-desejos{
+            @extend %absolute;
+            @extend %pointer;
+            top:5px;
+            right:5px
+        }
+    }
+    .actions{
+        button{
+            @extend %block;
+            @extend %w-100;
+            @extend %txt-center;
+            margin: 10px auto;
+        }
+    }
+}
+.dias{
+    background: url('#{$path_img}/icones/icon-dias.png') no-repeat center;    
+}
+.prazo{
+    background: url('#{$path_img}/icones/icon-prazo.png') no-repeat center
+}
+.disponiveis{  
+    background: url('#{$path_img}/icones/icon-clock.png') no-repeat center
+}
+.dias,.prazo,.disponiveis{
+    @extend %centralizar;
+    background-size: 90%;
+}
+.tooltip-cont{
+    @extend %relative;
+    @extend %pointer
+}
+.tooltip{
+    @include border-radius(5px);
+    display: none;
+    position: absolute;  
+    top:0;
+    left:0;
+    padding: 10px;
+    background: #000;
+    min-width: 200px;
+    min-height: 50px;      
+    @extend %mediumShadow;
+    &:after{
+        content: ' ';
+        position: absolute;
+        bottom: -15px;
+        left: 10px;
+        @include triangle('topleft',15px,15px,#000)
+    }
+    .label{
+        font-size: 0.75rem;
+        @extend %w-100;
+        @extend %block;
+        color:#fff
+    }
+    a{
+        color: #0683d3
+    }
+}

@@ -1,0 +1,81 @@
+@mixin localStyle{
+    background-color: $white;
+    @extend %lightShadow;
+    @extend %w-100;
+    padding:15px;
+    margin-bottom: 15px
+}
+.anuncio_single{
+    @include colGenerator;
+    padding-top:25px;
+    .col{
+        margin-bottom: 15px;
+    }
+}
+.anuncio-descricao,.anuncio-info{
+    @include localStyle;
+    p{
+        font-size: 1rem;
+        color:$gray-700;
+        line-height: 1.5rem;
+        margin: 15px auto;
+    }
+}
+.anuncio-vendedor{ 
+    @include localStyle;   
+    .user-data{
+        @include userStyle;
+    }   
+}
+.box-action-purchase{   
+    @include localStyle;
+    padding:15px;    
+    .price{
+        @extend %block;
+        font-size: 3rem;
+    }
+    .title,.price,.parcelamento{
+        margin: 15px 0;
+    }
+    .botoes{
+        margin:15px auto;
+        @include for-size(tablet){
+            @include flexbox;
+            @include justify-content(space-between);
+        }   
+        .btn-primary{
+            background-color: #4db74d
+        }
+        .btn-primary,.btn-secondary{
+            @include for-size(phone-only){
+                margin-bottom: 10px
+            }
+            @include for-size(tablet){
+                width: 49%
+            }
+        }
+    }
+    .garantia{
+        color: $gray-600;
+        font-size: $font-09
+    }
+    .quantidade{
+        margin:15px 0;       
+        input{
+            height: 40px;
+            border: 1px solid $gray-400;
+            padding: 5px;
+            font-size:$font-12
+        }
+    }
+}
+.anunc-title{
+    @extend %bold;
+    @include for-size(phone){       
+        color:$gray-600;
+        font-size: 1rem;
+    }
+    @include for-size(tablet){
+        font-size: 1.2rem
+    }
+}

@@ -1,0 +1,21 @@
+.comp-galeria-fotos{
+    background-color: $gray-100;
+    margin-bottom: 15px;
+    @extend %lightShadow;
+    .gf-main{
+        padding:0 10px;
+        img{
+            max-width: 100%;
+        }
+    }
+    .owl-carousel{       
+        .owl-item{    
+            @include flexbox;
+            @include justify-content(space-between);
+            padding:0 10px;
+            img{
+                @include border-radius(5px);                
+            }
+        }
+    }
+}

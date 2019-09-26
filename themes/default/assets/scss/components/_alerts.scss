@@ -1,0 +1,9 @@
+.alert-error{
+    @extend %block;
+    @extend %w-100;
+    @extend %txt-center;
+    @include shadow;
+    padding: 35px;
+    color: rgba(141,0,0,0.85);
+    background-color:#fff
+}

@@ -1,0 +1,37 @@
+.cadastro{
+    @extend %relative;
+    @extend %block;
+    @extend %bg-white;
+    width: 290px;
+    min-height:100px; 
+    padding-top:35px;
+    form{
+        @extend %w-100;
+        padding: 20px;
+    }
+    .title{
+        @extend %txt-center;
+        @extend %block;
+        @extend %bold;
+        color:$black        
+    }
+    .input{
+        margin-bottom: 15px
+    }
+    .icon-email{
+        @include inputStyle($outLine:2px solid #ccc,$br:5px,$icon:'new-post.png',$iconColor:cccccc);
+    }
+    .icon-senha{
+        @include inputStyle($outLine:2px solid #ccc,$br:5px,$icon:'lock.png',$iconColor:cccccc);
+    }
+    .termos{
+        background-color: $gray-200;
+        font-size: .8rem;
+        padding: 20px;
+        color:$gray-700;
+        line-height:1.5rem;
+        a{
+            color:#00b3d0
+        }
+    }
+}

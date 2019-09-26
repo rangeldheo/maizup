@@ -1,0 +1,129 @@
+@mixin for-size($size) {
+    @if $size == phone-only {
+        @media (max-width: 599px) { @content; }
+    } @else if $size == phone {
+        @media (min-width: 300px) { @content; }
+    } @else if $size == tablet {
+        @media (min-width: 600px) { @content; }
+    } @else if $size == notebook-md{
+        @media (min-width: 760px) { @content; }
+    } @else if $size == tablet-landscape {
+        @media (min-width: 900px) { @content; }   
+    } @else if $size == crt{
+        @media (min-width: 1024px) { @content; }
+    } @else if $size == notebook {
+        @media (min-width: 1200px) { @content; }
+    } @else if $size == desktop {
+        @media (min-width: 1366px) { @content; }
+    } @else if $size == big-desktop {
+        @media (min-width: 1440px) { @content; }
+    }
+}
+
+//gerador de sombras
+@mixin shadowGenerator($top:0,$left:0,$blur:2px,$spread:1px,$color:rgba(0,0,0,0.25),$inset:false){
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $spread $color;
+        -moz-box-shadow: inset $top $left $blur $spread $color;
+        box-shadow: inset $top $left $blur $spread $color;
+    }@else{
+        -webkit-box-shadow: $top $left $blur $spread $color;
+        -moz-box-shadow: $top $left $blur $spread $color;
+        box-shadow: $top $left $blur $spread $color;
+    }
+}
+//para elementos dividios em Head, Main e Foot
+@mixin basic-grid{
+    @extend %flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+}
+
+@mixin inputDefaultStyle{
+    .input, .btn{
+        border: 1px solid $gray-300;
+        padding: 5px 10px;
+        height: 35px;
+    }
+}
+@mixin colGenerator($numCol:2,$margin:10px,$resposive:true){  
+    @if $resposive {  
+        @include for-size(notebook-md){
+            @include flexbox;
+            @include align-items;
+            @include justify-content(space-between);  
+        }
+        .col{        
+            @include for-size(phone){
+                width: 100%;
+            }             
+            @include for-size(notebook-md){
+                width: #{calc(#{(100% / $numCol)} - #{$margin})}
+            }          
+        }
+    }@else{
+        .col{
+            width: #{calc(#{(100% / $numCol)} - #{$margin})}
+        }
+    }
+}
+@mixin userStyle{
+    @extend %relative;            
+    @include flex-wrap(wrap);                      
+    @include for-size(phone){
+        margin-bottom: 15px;
+    }
+    @include for-size(notebook-md){
+        margin-bottom: 0;
+        //width:15%;
+    }
+    .head{
+        @include justify-content(flex-start); 
+        @extend %centralizar;
+        @extend %w-100
+    }
+    .item-main{
+        @extend %w-100;
+        padding:20px 0;
+        .medalha{
+            @extend %relative;
+            margin-left: 10px
+        }
+    }
+    .foot{
+        @extend %w-100;
+        label{
+            font-size: .8rem
+        }
+    }            
+}
+
+@mixin inputIcon($icon,$size:24,$direction:left,$type:material-outlined,$color:000000){
+    background-image: url('https://img.icons8.com/#{$type}/#{$size}/#{$color}/#{$icon}');
+    background-repeat: no-repeat;
+    background-size: $size;  
+    @if $direction == left{
+        background-position: 10px center;
+        padding-left: $size + 20px 
+    }
+    @if $direction == right{
+        background-position: cal(100% - 10px) center;
+        padding-right: $size + 20px
+    } 
+}
+
+@mixin inputStyle($height:42px, $br:false,$outLine:false,$icon:false,$iconColor:000000){
+    @extend %block;
+    @extend %w-100;
+    height: 42px;
+    @if $br {
+        @include border-radius($br)
+    }
+    @if $outLine {
+        border: $outLine
+    }
+    @if $icon {
+        @include inputIcon($icon,$color: $iconColor);
+    }
+}

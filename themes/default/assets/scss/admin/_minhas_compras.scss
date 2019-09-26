@@ -1,0 +1,109 @@
+.mod-compra {
+    .tag {
+        margin-left: 10px
+    }
+    .compra {
+        padding: 0;
+        .compra-item {
+            @extend %flex-center;
+            padding: 12px 0;
+            .compra-item-info {
+                width: calc(100% - 110px);
+                span {
+                    font-size: .8rem;
+                    color: #666
+                }
+                label {
+                    font-size: 1.2rem;
+                    @extend %bold;
+                    color: #626160
+                }
+                span,
+                label {
+                    @extend %w-100;
+                    @extend %block;
+                    text-indent: 10px
+                }
+            }
+        }
+        .detalhes-compra {
+            padding: 15px 0;
+            border-top: 1px solid #d7d7d7;
+            border-bottom: 1px solid #d7d7d7;
+            .compra-info {
+                font-size: .8rem;
+                color: #b6b6b6;
+                margin: 25px 0;
+                .info-dias {
+                    background: url('#{$path_icones}/icon-dias.png') no-repeat left center
+                }
+                .info-horas {
+                    background: url('#{$path_icones}/icon-clock.png') no-repeat left center
+                }
+                .info-dias,
+                .info-horas {
+                    @extend %flex-center;
+                    height: 24px;
+                    text-indent: 30px
+                }
+            }
+        }
+        .horario-entrega {
+            padding: 15px 0;
+            color: #626160;
+            .time {
+                @extend %bold;
+                font-size: 1.2rem;
+                margin: 15px 0
+            }
+            .reembolso {
+                label {
+                    font-size: .75rem;
+                    width: 60%
+                }
+            }
+        }
+    }
+    .chat {
+        .history {
+            @extend %w-100;
+            height: 400px;
+            overflow-y: scroll;
+            padding: 0 10px;
+            .dialog {
+                @include align-items(flex-start);
+                margin-bottom: 15px;
+                .user {
+                    padding: 15px;
+                    border: 3px solid #ccc;
+                    width: 24px;
+                    height: 24px;
+                }
+                .msg {
+                    @extend %flex-center;
+                    @include justify-content(flex-start);
+                    @include border-radius(8px);
+                    padding: 5px 10px;
+                    width: calc(100% - 40px);
+                    min-height: 36px;
+                    background-color: #f6f6f6;
+                    font-size: .8rem;
+                    color: #b4b3b3;
+                    line-height: 1.25rem
+                }
+            }
+            .dialog-msg {
+                .msg {
+                    background-color: #468ffb;
+                    color: #fff
+                }
+            }
+        }
+        .send-msg {
+            input[type=text] {
+                @include border-radius(8px);
+                background-color: #f8f6f6
+            }
+        }
+    }
+}

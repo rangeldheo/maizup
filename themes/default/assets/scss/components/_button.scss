@@ -1,0 +1,50 @@
+@mixin btn($bg:$primary,$color:$white,$txtAlg:center,$pad:5px 15px,$bRadius:4px,$height:42px){ 
+    @include border-radius($bRadius);
+    @extend %transition;
+    @extend %centralizar;
+    @extend %inblock;
+    @extend %pointer;
+    height: $height;
+    padding: $pad;
+    background-color: $bg;
+    text-align: $txtAlg;
+    color:$color;
+    border:none;
+    i{
+        margin-left:-10px;
+        margin-right:5px;
+    }
+    &:hover{
+        @extend %lightShadow;
+        transform: scale(1.05)        
+    }
+}
+.btn-primary{
+    @include btn;
+}
+.btn-primary-outline,.btn-white-outline{
+    @include btn($bg:transparent);
+    border:2px solid $primary;
+    color: $primary
+}
+.btn-secondary{
+    @include btn($bg:$secondary);
+}
+.btn-ok{
+    @include btn($bg:#2ea053);
+}
+.btn-block{
+    @extend %w-100
+}
+.btn-white-outline{
+    border:2px solid $white;
+    color: $white
+}
+.btn-container{
+    @extend %block;
+    @extend %w-100;
+    padding: 15px 0;
+}
+.btn-air{
+    @extend %mediumShadow;
+}

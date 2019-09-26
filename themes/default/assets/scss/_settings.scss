@@ -1,0 +1,51 @@
+$path_img : '../../assets/images';
+$path_icones : '../../assets/images/icones';
+$fonts-location: '/assets/fonts';
+
+$bodyColor: #f6f1f1;
+
+$primary    : #0aa1e6;
+$secondary  : #ea7a28;
+$variant    : red;//not defined
+
+//dashboard colors
+$green      : #2de398;
+$blue       : #1eb7f7;
+$orange     : #ff9600;
+$gray       : #a3a3a3;
+
+$white      : #fff;
+$gray-100   : #f8f9fa;
+$gray-200   : #e9ecef;
+$gray-300   : #dee2e6;
+$gray-400   : #ced4da;
+$gray-500   : #adb5bd;
+$gray-600   : #6c757d;
+$gray-700   : #495057;
+$gray-800   : #343a40 ;
+$gray-900   : #212529;
+$black      : #000;
+
+$font-09    : .9rem;
+$font-1     : 1rem;
+$font-12    : 1.2rem;
+$font-15    : 1.5rem;
+$font-2     : 2rem;
+$font-3     : 3rem;
+
+$faceColor      : #3b5999;
+$twitterColor   : #2eacf6;
+$youtubeColor   : #de1f2b;
+$instagramColor : #ea6357;
+
+//*-----------------------------------------
+//cria o array de fonts separados por espaco
+// ex: font_name font_name font_name
+//*-----------------------------------------
+$create-fonts: true;
+$fonts: 'gotham','gotham-light-regular','gotham-bold';
+
+// create [ WEBFONTS ]
+$gotham: 'gotham';
+$gotham-light: 'gotham-light-regular';
+$gotham-bold: 'gotham-bold';

@@ -1,0 +1,44 @@
+.question-container{
+    @extend %w-100;
+    @extend %block;
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    .question{
+        @extend %flex-equal;
+        @extend %dash_container;
+        @extend %w-100;
+        margin: 15px 0; 
+        .head,.body{
+            padding: 10px;
+        }
+        .head{
+            .title{
+                width: calc(70% - 100px);
+                color: $gray
+            }
+            .price{
+                @extend %bold;
+                width:30%;
+                font-size: 1.8rem;
+                color:#545b62
+            }
+        }
+        .body{
+            border-top: 1px solid #d7d7d7;
+            .user-data{
+                label{
+                    color:$gray;
+                    font-size: .9rem
+                }
+            }
+            .message,.date{
+                color:$gray;
+                font-size: .9rem
+            }
+        }
+    }
+    .question-actions{
+
+    }
+}

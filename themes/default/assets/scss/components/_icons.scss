@@ -1,0 +1,27 @@
+@mixin icon8($icon, $size:25, $color:ffffff,$hover:ffffff) {
+    background-image: url('http://img.icons8.com/material-outlined/#{$size}/#{$color}/#{$icon}'); 
+    background-size: '#{$size}px';
+    &:hover{
+        background-image: url('http://img.icons8.com/material-outlined/#{$size}/#{$hover}/#{$icon}'); 
+    }
+}
+.icon{
+    @extend %pointer;
+    @extend %inblock;
+    width : 25px;
+    height:  25px;
+    background-repeat: no-repeat;
+    background-position: center
+}
+.menu-mobile{
+    @include icon8($icon:'menu.png',$color:0aa1e6);
+}
+.lupa{
+    @include icon8($icon:'search.png');
+}
+.cifrao{
+    @include icon8($icon:'us-dollar.png');
+}
+.cart{
+    @include icon8($icon:'shopping-cart.png');
+}

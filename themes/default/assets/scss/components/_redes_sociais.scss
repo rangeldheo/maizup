@@ -1,0 +1,27 @@
+.redes-sociais{
+    @extend %flexbox;
+    @include for-size(phone){
+        @include justify-content(center);
+    }
+    @include for-size(notebook-md){
+        @include justify-content(flex-start);
+    }
+    margin:15px 0;
+    li{         
+        @include border-radius(50%);
+        padding:5px;
+        margin-right:10px;
+        &:nth-child(1){
+            background-color: $faceColor
+        }
+        &:nth-child(2){
+            background-color: $twitterColor
+        }
+        &:nth-child(3){
+            background-color: $youtubeColor
+        }
+        &:nth-child(4){
+            background-color: $instagramColor
+        }  
+    }
+}

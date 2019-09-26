@@ -1,0 +1,23 @@
+.notificacoes {
+    .notificacao {
+        @extend %relative;
+        @extend %w-100;
+        background-color: #fbfafa;
+        padding: 22px 12px;
+        font-size: .9rem;
+        margin-bottom: 10px;
+        label {
+            @extend %flex-center;
+            color: #999;
+            text-indent: 25px;
+        }
+        .data {
+            @extend %absolute;
+            bottom: 5px;
+            right: 15px;
+            font-size: .8rem;
+            color: #999;
+            font-style: italic
+        }
+    }
+}

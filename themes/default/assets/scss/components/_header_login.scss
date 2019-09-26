@@ -1,0 +1,26 @@
+.header-login{
+    .user-logged{
+        @extend %relative;
+        @extend %centralizar;
+        @include for-size(phone){
+            width: 100%
+        }
+        @include for-size(notebook-md){
+            width: 50%;
+        }
+        @include for-size(crt){
+            width: 25%;
+        }
+        span{
+            @extend %centralizar;
+            @extend %pointer;
+            @include border-radius(5px);
+            padding: 5px;            
+            margin-left: 15px;
+            color:#fff;
+            &:hover{
+                background-color: $primary;
+            }
+        }
+    }
+}

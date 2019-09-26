@@ -1,0 +1,70 @@
+.header-notification{
+    @extend %absolute;
+    @extend %hide;
+    @extend %bg-white;
+    @extend %mediumShadow;
+    @extend %w-100;
+    top:50px;
+    z-index:999;
+    .head{
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 15px;
+        @extend %flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        a {
+            color: $primary;         
+        }
+    }
+    .body{
+        @extend %block;
+        @extend %w-100; 
+        max-height: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;        
+        padding:10px;
+        .alert{
+            @extend %relative;
+            @extend %centralizar;
+            @extend %bg-white;
+            @extend %mediumShadow;
+            @extend %w-100;
+            margin-bottom: 10px;
+            padding: 10px 5px;
+            & > a{
+                margin:0;
+                img{
+                    width: 35px;
+                }
+            }
+            p{
+                @extend %txt-left;
+                width: calc(95% -50px);
+                font-size: 0.8rem;
+                color:$gray-600;
+                line-height: 1.2rem
+            }
+            .close-alert{
+                @extend %absolute;
+                @extend %pointer;
+                top:-13px;
+                right:-13px;
+            } 
+            & > div{
+                img{
+                    max-width: 100%
+                }
+            }
+            &:hover{
+                background-color: #e5f5fb
+            }
+        }
+    }
+    .foot{
+        padding: 10px
+    }
+    @include for-size(phone-only){
+        width: 96%       
+    }
+}

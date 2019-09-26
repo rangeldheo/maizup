@@ -1,0 +1,32 @@
+@import "settings";
+//:CORE
+//entendemos que core é tudo aquilo que deve ser utilizado/reutilizado
+//para compor os layout/modulos/componetes/
+@import "core/css3_crosbrowser";
+@import "core/flexbox";
+@import "core/mixins";
+@import "core/triangle";
+@import "core/fonts";
+@import "core/extends";
+@import "core/animate";
+//:COMPONENTES
+//são regras de estilos fechadas para uso/reuso em 
+//qualquer parte do APP de forma independente
+@import "components/air_components";
+@import "components/modal";
+@import "admin/dashboard";
+@import "admin/menus";
+@import "admin/perfil_usuario";
+@import "admin/pergunta";
+@import "admin/criar_anuncio";
+@import "admin/add_saldo";
+@import "admin/notificacoes";
+@import "admin/minhas_compras";
+//:COMPONENTES UX
+//são componentes criados para melhorar a 
+//experiencia do usuário
+@import "ux/_ux";
+//:LAYOUT
+//são as definiçoes visuais de cada modulo/pagina
+@import "layout/grid";
+@import "layout/elements";

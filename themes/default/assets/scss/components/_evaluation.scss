@@ -1,0 +1,64 @@
+.evaluation{     
+    background: $gray-100; 
+    padding:35px 0;
+    @include for-size(tablet){
+        @include shadowGenerator($inset:true);  
+    }
+    .body{
+        min-height: 300px; 
+        padding: 15px 0;
+        @include for-size(crt){
+            @include justify-content(space-between);
+            @include flex-wrap(wrap);
+            .item{
+                width: 30%;
+            }
+        }
+    }
+    .link{
+        @extend %block;
+        @extend %w-100;
+        @extend %txt-right;      
+        padding: 0 15px 10px 0;
+        border-bottom: 2px solid #ccc;
+        font-style: italic;
+        color: #646464
+    }
+}
+.eva-item{    
+    @extend %basic-grid;
+    @include border-radius(5px);
+    @extend %bg-white;
+    @extend %relative;
+    padding: 15px; 
+    .status{
+        @include border-radius(50%);
+        position: absolute;        
+        background: #fff;
+        @include for-size(phone){
+            top: 5px;
+            right: 5px
+        }
+        @include for-size(tablet){
+            top: -20px;
+            right: -20px
+        }
+    }
+    .item-main{
+        @extend %txt-center;
+        padding: 10px
+    }
+    .note{
+        @include border-radius(5px);
+        @extend %italic;
+        font-size: .9rem;
+        line-height: 1.3rem;
+        padding: 10px;
+        background: $gray-200;
+        color: $gray-700;        
+    }
+    .data-publicacao{
+        @extend %absolute;
+        right: 15px
+    }
+}

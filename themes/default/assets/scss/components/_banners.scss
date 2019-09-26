@@ -1,0 +1,13 @@
+.banners{
+    @extend %relative;
+    @extend %block;
+    @extend %w-100; 
+    @include shadowGenerator($top:1px,$left:0,$blur:6px,$spread:1px,$color:rgba(0,0,0,0.23));
+    margin-bottom:10px;
+    .b-img{
+        @extend %w-100
+    }
+    .owl-dots{
+        @extend %absolute;
+    }
+}

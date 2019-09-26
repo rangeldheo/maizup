@@ -1,0 +1,53 @@
+.carrossel{
+    @extend %bg-white;  
+    padding:35px 0;
+    .body{ 
+        padding: 15px;
+        min-height: 350px;
+    }
+    .btn-primary{
+        width: 200px
+    }
+}
+.cs-item{  
+    @extend %basic-grid;
+    @extend %relative;
+    padding: 15px;
+    min-height: 285px;
+    .cover{
+        @extend %w-100;
+        background: #666 url('#{$path_img}/layout/load.svg') no-repeat center
+    }
+    .item-main{
+        min-height: 80px;
+    }
+    .price{
+        @extend %block;
+        font-size: $font-15;
+        margin: 10px 0
+    }   
+}
+.user-data{
+    @extend %flexbox;
+    @include align-items(center);
+    .title{
+        @extend %txt-left;
+    }
+}
+.favoritar{
+    @extend %transition;
+    @extend %pointer;
+    position: absolute;
+    bottom:70px;
+    right: 12px;
+    &:hover{
+        transform: scale(1.2)
+    }
+}
+.medalha{   
+    position: absolute;
+    right: 10px
+}
+.data-publicacao{
+    @extend %italic
+}

@@ -1,0 +1,24 @@
+.modal{
+    @extend %hide;
+}
+.modal-container{
+    z-index: 9999;
+    @extend %centralizar;
+    @extend %w-100;   
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    background: rgba(0,0,0,0.75);    
+}
+.close-modal,.remove-modal,.remove-comp{
+    @extend %absolute;
+    @extend %block;
+    @extend %pointer;
+    background: url(https://img.icons8.com/material-outlined/24/000000/delete-sign.png) no-repeat center;
+    width: 24px;
+    height: 24px;
+    top:12px;
+    right:12px;
+    border: none;
+}

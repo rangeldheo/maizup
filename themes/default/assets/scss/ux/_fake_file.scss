@@ -1,0 +1,15 @@
+.fake-file{
+    @extend %centralizar;
+    @extend %pointer;
+    @extend %w-100;
+    @include border-radius(5px); 
+    background: url('https://img.icons8.com/material-outlined/60/a3a3a3/image.png') no-repeat center;
+    height: 100%;
+    padding:10px;    
+    .file{
+        @extend %hide;
+    }
+    &:hover{
+        background: url('https://img.icons8.com/material-outlined/60/fc6a1b/image.png') no-repeat center;
+    }
+}

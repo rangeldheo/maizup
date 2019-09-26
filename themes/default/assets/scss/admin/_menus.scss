@@ -1,0 +1,24 @@
+.dashboard_menu{
+    @extend %flexbox;
+    background-color: #000;   
+    .menu{
+        @include for-size(phone){
+            @include flex-center
+        } 
+        @include for-size(notebook){
+            @include flex-end
+        } 
+        li{
+            @extend %flex-center;
+            padding: 10px;
+            @extend %transition;
+            &:hover{
+                background-color: $secondary
+            }
+            a{                          
+                max-width: 180px;
+                color:#fff               
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.lista-desejos{    
+    @extend %bg-white;
+    @extend %relative;
+    @include for-size(phone-only){
+        padding: 30 20px
+    }
+    @include for-size(tablet){
+        width: 50%;
+    }
+    padding-top: 35px;
+    & > .title{
+        @extend %bold;
+        padding-left: 70px;               
+        color:$gray-600;
+        @include for-size(phone){
+            background: url('https://img.icons8.com/material/24/e74c3c/like.png') no-repeat 10px center; 
+            font-size:1.2rem;
+        }
+        @include for-size(tablet){
+            background: url('https://img.icons8.com/material/50/e74c3c/like.png') no-repeat 10px center; 
+            font-size: 2.5rem;
+        }
+    }
+    .text{
+        padding:25px 20px;
+        border-bottom: 4px solid $gray-600;
+        font-size: 1rem;
+        color:$gray-500
+    }
+}
+.lista-desejos-anuncios{
+    overflow: scroll;
+    max-height: 80vh;
+    padding:25px 20px;
+    .anuncio{
+        @extend %mediumShadow;
+        padding: 10px;
+        margin-bottom: 15px;
+        @include for-size(tablet){
+            @include flexbox;
+            @include align-items;
+            @include justify-content(space-between);
+        }
+        .product-cover{
+            img{
+                max-width: 100%
+            }
+        }
+        .product-data{  
+            padding: 10px 0;
+            line-height: 1.3rem
+        }
+        .product-price{  
+            @extend %centralizar;
+            .center{
+                .valor{
+                    @extend %bold;
+                    @extend %block;
+                    color:$black;
+                    font-size: 2.5rem
+                }
+                .parcelamento{
+                    @extend %bold;
+                    color: $gray-600
+                }
+                .botoes{
+                    @extend %flexbox;
+                }
+                .btn-primary,.btn-secondary{
+                    @extend %lightShadow;
+                    background-color: #23b360;
+                    font-size: 1.3rem;
+                    margin: 15px auto;
+                    width: 49%;
+                    &:hover{
+                        background: #ee981c
+                    }
+                }
+                .btn-secondary{
+                    background: #f4f4f4;
+                    color: $black
+                }
+            }
+        } 
+        .product-data{
+            @extend %centralizar;
+            .center{
+                .btn-primary{
+                    @extend %w-100;
+                    margin-top: 12px
+                }
+            }
+        }
+        .product-cover,.product-data,.product-price{
+            @include for-size(phone){
+                width:100%
+            }
+            @include for-size(tablet){               
+                width:32%
+            }
+        }
+    }
+}

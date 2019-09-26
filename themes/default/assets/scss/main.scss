@@ -1,0 +1,43 @@
+@import "settings";
+
+//:CORE
+//entendemos que core é tudo aquilo que deve ser utilizado/reutilizado
+//para compor os layout/modulos/componetes/
+@import "core/css3_crosbrowser";
+@import "core/flexbox";
+@import "core/mixins";
+@import "core/triangle";
+@import "core/fonts";
+@import "core/extends";
+@import "core/animate";
+
+//:COMPONENTES
+//são regras de estilos fechadas para uso/reuso em 
+//qualquer parte do APP de forma independente
+@import "components/air_components";
+@import "components/modal";
+@import "components/icons";
+@import "components/button";
+@import "components/component_single";
+@import "components/banners";
+@import "components/carrossel";
+@import "components/categorias";
+@import "components/evaluation";
+@import "components/menu_header";
+@import "components/redes_sociais";
+@import "components/filtros";
+@import "components/anuncios";
+@import "components/anuncio_single";
+@import "components/galeria_fotos";
+@import "components/chat_publico";
+@import "components/cadastro";
+@import "components/lista_de_desejos";
+@import "components/header_login";
+@import "components/header_notificacao";
+@import "components/alerts";
+@import "components/paginator";
+
+//:LAYOUT
+//são as definiçoes visuais de cada modulo/pagina
+@import "layout/grid";
+@import "layout/elements";

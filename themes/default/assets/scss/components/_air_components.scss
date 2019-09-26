@@ -1,0 +1,56 @@
+@mixin shadow($layer:0){
+    @if $layer == 0 {
+        @include shadowGenerator($top:0,$left:1px,$blur:6px,$spread:1px,$color:rgba(0,0,0,0.09));
+    }
+    @if $layer == 1 {
+        @include shadowGenerator($top:0,$left:3px,$blur:14px,$spread:0,$color:rgba(26, 27, 31, .11));
+    }
+    @if $layer == 2 {
+        @include shadowGenerator($top:0,$left:6px,$blur:6px,$spread:1px,$color:rgba(0,0,0,0.20));
+    }
+    @if $layer == 3 {
+        @include shadowGenerator($top:0,$left:8px,$blur:8px,$spread:1px,$color:rgba(0,0,0,0.15));
+    }
+    @if $layer == 4 {
+        @include shadowGenerator($top:0,$left:10px,$blur:25px,$spread:0,$color:rgba(0,0,0,0.2));
+    }
+}
+@mixin hoverAir($layer:1){
+    @extend %transition;
+    &:hover{               
+        @extend %pointer;
+        @include shadow($layer)
+    }
+}
+@mixin activeAir{
+    @extend %transition;
+    &:active{        
+        @include shadow(0)
+    }
+}
+.air{
+    @extend %transition;
+    @include shadow; 
+    @include hoverAir;
+    @include activeAir
+}
+.static-air{
+    @extend %transition;
+    @include shadow
+}
+.air-flutue{
+    @extend %transition;
+    @include shadow(4)
+}
+.icon-circle-flut{
+    @extend %absolute;
+    @include border-radius(50%);    
+    @extend %centralizar;    
+    left: calc(50% - 25px);
+    top:-25px;
+    width: 50px;
+    height: 50px;
+    i{
+        font-size: 60px
+    }
+}

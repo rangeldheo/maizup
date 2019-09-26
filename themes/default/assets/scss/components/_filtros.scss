@@ -1,0 +1,155 @@
+.filtros{   
+    .filtro-title{
+        background: url('#{$path_img}/layout/bg-categorias.jpg') no-repeat center;
+        background-size:cover;      
+        .pelicula{
+            background-color: rgba(0,0,0,0.5);
+            padding:25px 0;
+            h1{
+                @include text-shadow($x: 1px, $y: 1px, $blur: 2px, $color: rgba(0,0,0,.35));
+                @extend %white;            
+                font-size: 2rem;            
+            }
+        }
+    }
+    .filtro-tipo{
+        background: $gray-200;       
+        .tipos{
+            @extend %flexbox;
+            @include for-size(phone){
+                @include justify-content(space-between);
+                @include flex-grow(1);
+            }
+            @include for-size(tablet){
+                @include justify-content;
+                @include flex-grow;
+            }
+            li{
+                @include for-size(phone){
+                    padding:10px 15px;
+                }
+                @include for-size(tablet){
+                    padding:10px 31px;
+                }
+                a,span{
+                    @extend %block;
+                    @extend %w-100;
+                    @extend %txt-center;
+                    font-size: $font-09;
+                    color:$gray-700
+                }
+            }
+        }
+    }
+    .filtro-combobox{
+        @extend %bg-white;
+        @include shadowGenerator($top:3px,$left:3px,$blur:5px,$spread:3px,$color:rgba(0,0,0,0.12));
+        .container{            
+            @extend %flexbox;  
+            @include flex-wrap(wrap);
+            @include justify-content(space-between);
+            padding:30px 0;
+            .group{
+                @extend %inputDefaultStyle;
+                @include for-size(tablet){
+                    @include flexbox;
+                    @include align-items(center);
+                    @include flex-grow(1);
+                    @include justify-content(space-between);
+                }
+                min-width:24%;
+                .input{
+                    @include for-size(phone){
+                        width: 100%
+                    }
+                    @include for-size(tablet){
+                        width: 69%
+                    }
+                }
+                label{
+                    @extend %txt-center;
+                    @extend %block;
+                    font-size: $font-09;
+                    @include for-size(phone){
+                        width: 100%;
+                        margin-bottom: 10px
+                    }
+                    @include for-size(tablet){                       
+                        width: 30%;
+                        margin-bottom: 0
+                    }
+                }
+            }
+            @include for-size(phone){
+                .input-busca{
+                    .btn{
+                        border: none;
+                        background-color: $primary;
+                        width: 100%;
+                    }
+                }
+            }
+            @include for-size(tablet){
+                .input-busca{               
+                    .btn{                     
+                        margin-left: 20%;
+                        width: 80%;
+                    }
+                }
+            }
+
+        }
+    }
+    .active{
+        @extend %bg-white;
+    }
+}
+.garantia-do-site{
+    a{
+        @extend %block;
+        @extend %white; 
+        @extend %txt-center;
+        @include border-radius-separate($topLeftRadius: 0, $topRightRadius: 0);
+        @include for-size(phone){
+            width: 100%
+        }
+        @include for-size(tablet){
+            width: 130px
+        }
+        padding: 8px 5px;
+        background: $primary; 
+        font-size: $font-09;
+        z-index: 1
+    }
+}
+.barra-de-pesquisa{   
+    form{
+        @extend %flexbox;            
+        @include justify-content(flex-end);
+        @extend %w-100;
+        @include for-size(phone){
+            margin: 10px auto;
+        }
+    }
+    .input-busca{
+        @extend %flexbox;            
+        @include justify-content(flex-end);
+        @extend %inputDefaultStyle;
+        @extend %block;
+        @include for-size(phone){            
+            width:100%
+        }
+        @include for-size(tablet){
+            width: 268px;
+        }
+        .input{
+            width:85%
+        }
+        .btn{
+            @extend %pointer;
+            width: 15%;
+            background-color: $primary;
+            border-color: $primary
+        }
+    }
+}

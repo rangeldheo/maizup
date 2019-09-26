@@ -1,0 +1,46 @@
+.session-title {
+    @extend %font;
+    @extend %block;
+    @extend %w-100;
+    @extend %txt-center;
+    @extend %bold;
+    @extend %txt-upper;
+    color: #7c7e7d
+}
+
+.bold {
+    @extend %bold
+}
+
+.black {
+    @extend %black
+}
+
+.bg-dark {
+    background-color: $gray-200
+}
+
+.verificado {
+    @extend %block;
+    @include border-radius(50%);
+    background: url('http://img.icons8.com/ios-glyphs/25/0884d3/ok.png') no-repeat center;
+    width: 25px;
+    height: 25px;
+}
+
+.color-primary {
+    color: $primary
+}
+
+.block {
+    @extend %block
+}
+
+.block-w-100 {
+    @extend %block;
+    @extend %w-100
+}
+
+.text-center {
+    @extend %txt-center
+}

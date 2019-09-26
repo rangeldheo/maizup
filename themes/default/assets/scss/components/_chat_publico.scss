@@ -1,0 +1,55 @@
+.chat-publico{   
+    margin:15px auto;
+    .actions{
+        @extend %centralizar;
+        @extend %lightShadow;
+        .input{
+            padding: 5px;
+            width: 75%;
+            height: 42px;
+            border:1px solid #ccc
+        }
+        .btn-primary{
+            width: 25%;
+            @include border-radius(0)
+        }
+    }
+    .dialog{
+        @extend %flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(flex-end);
+    }
+    .question,.answer{
+        @extend %centralizar;
+        @extend %w-100;
+        img{
+            width: 50px;
+        }
+        .text{           
+            @include border-radius(10px);
+            @extend %relative;           
+            width: calc(100% - 70px);
+            padding: 10px 20px;
+            background: #eeeded;
+            min-height: 50px;
+            font-size: .9rem;
+            color: $gray-600;
+            margin-right: 0;
+            &:before{
+                @extend %absolute;
+                @include triangle(left,12px,12px,#eeeded);
+                left: -12px;
+                top:calc(50% - 12px);;                         
+            }
+        }
+    }
+    .answer{
+        width:95%;
+        .text{
+            background: #e7f9fd;
+            &:before{
+                @include triangle(left,12px,12px,#e7f9fd);
+            }
+        }
+    }
+}

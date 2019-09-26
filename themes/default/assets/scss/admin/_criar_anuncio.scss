@@ -1,0 +1,76 @@
+.upload-imagens{
+    margin: 10px 0;
+    .add-img{    
+        @include hoverAir(4);
+        margin-bottom:10px;
+        width: 24%;
+        height: 80px;
+        border: 1px solid $gray;        
+    }    
+}
+.form-control{
+    @extend %flex-equal;    
+    @extend %w-100;
+    margin-bottom: 25px;
+    label,select,input,textarea{      
+        @extend %w-100;
+        font-size: .8rem
+    }
+    label,{
+        @extend %bold;
+        padding: 5px 0;
+        color: #8d8d8d
+    }
+    select,textarea,input[type=text]{
+        @include css3-prefix(appearance, none);
+        @include hoverAir(4);
+        padding: 8px 10px;
+        border: 1px solid $gray;        
+        color:$gray;       
+    }
+    select{
+        text-align: center;
+        background: url('https://img.icons8.com/material-outlined/24/a3a3a3/expand-arrow.png') no-repeat calc(100% - 5px) center;
+    }
+    textarea{
+        resize:vertical
+    }
+    .fc_item{     
+        width: 48%;
+        label{
+            padding: 5px 0;
+        }
+        .taxa{
+            padding-top: 20px;
+            color:$gray
+        }
+    }    
+}
+.combobox{
+    .form-control{
+        width: 48%;
+    }
+}
+.complemento{
+    .form-control{
+        width: 32%;
+        input[type=text]{
+            text-indent: 25px
+        }
+        &:nth-child(1){
+            select{
+                background: url('#{$path_img}/icones/icon-dias.png') no-repeat 5px center;
+            } 
+        }    
+        &:nth-child(2){
+            select{
+                background: url('#{$path_img}/icones/icon-prazo.png') no-repeat 5px center;
+            } 
+        }    
+        &:nth-child(3){
+            input[type=text]{
+                background: url('#{$path_img}/icones/icon-clock.png') no-repeat 5px center;
+            } 
+        }    
+    }
+}
